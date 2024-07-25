@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+.css112
+{
+    
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    margin: 10rem auto;
+    max-width: max-content;
+    box-shadow: 10px 10px 5px grey;
+    /* box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5); */
+    /* align-items: flex-end; */
+}
+.css21
+{
+    justify-content:center; 
+    /* align-items:center; */
+    flex-direction: column;
+    gap: 2rem;
+    display:flex;
+    /* padding: 20px;
+    padding-bottom: 30px; */
+    /* padding-right: 200px; */
+}
+.back
+{
+    align-items: flex-end;
+    /* padding-right: 500px; */
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ94_--bGewuUp0-s65eNj9wRZX7dUhs5TZZg&s"); */
+    /* background-repeat: no-repeat; */
+   
+}
