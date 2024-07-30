@@ -1,21 +1,23 @@
 .css1
 {
-    
     display: flex;
     flex-direction: column;
     background-color: whitesmoke;
-    margin: 10rem auto;
+    margin: 7rem auto; 
+    
     max-width: max-content;
     box-shadow: 10px 10px 5px grey;
-    /* box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5); */
-    background-color: black;
+    box-shadow: 10px 10px 5px rgb(198, 172, 172);
+    padding: 20px;
+    padding-top: 40px;
+    /* background-color: black; */
 }
 .css2
 {
     justify-content:center; 
     align-items:center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     display:flex;
     padding: 20px;
     padding-bottom: 30px;

@@ -1,39 +1,19 @@
-import React, { useState } from 'react'
-import { TextField } from '@mui/material'
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
+import React, { useState } from 'react';
+import { TextField } from '@mui/material';
 import axios from 'axios';
 import Button from '@mui/material/Button';
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
+import BefNavbar from './BefNavbar';
+import { useAuth } from './AuthContext';
+
 const Login = () => {
+  const [errors, setErrors] = useState({});
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const nav = useNavigate();
+  const setAuth=useAuth();
 
-  const[errors,setErrors]=useState({});
-  // const[username ,setUsername]=useState('');
-  const[email ,setEmail]=useState('');
-  const[password ,setPassword]=useState('');
-
-  const handleDonate = async (e) => {
-    e.preventDefault();
-    console.log(email);
-    console.log(password);
-    // await axios.get('http://localhost:5000/api/data')
-    // .then(result=>{
-    //   result.data.map(posts=>{
-    //     if(posts.Name===email){
-    //       if(posts.Password===password){
-    //         n('/home')
-    //       }
-    //       else{
-    //         n('/')
-    //       }
-    //     }
-    //     else{
-    //       n('/')
-    //     }
-    //   })
-    // })
-};
   const validate = () => {
     let errors = {};
     let isValid = true;
@@ -41,9 +21,8 @@ const Login = () => {
     if (!email) {
       isValid = false;
       errors["email"] = "Please enter your email address.";
-    } 
-    else if (typeof email !== "undefined") {
-      const pattern = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    } else {
+      const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!pattern.test(email)) {
         isValid = false;
         errors["email"] = "Please enter a valid email address.";
@@ -57,48 +36,67 @@ const Login = () => {
 
     setErrors(errors);
     return isValid;
-  }
-  
-   const n1=useNavigate();
-    const handle = (event)=>{
-      event.preventDefault();
-      if(validate())
-      {
-      console.log('Email',email);
-      console.log('Password',password);
-      n1('/home');
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (validate()) {
+      try {
+        const result = await axios.get('http://localhost:3001/events');
+        const user = result.data.find(posts => posts.Email === email && posts.Password === password);
+
+        if (user) {
+          localStorage.setItem('userEmail', email);
+          setAuth(true);
+          nav('/afhome');
+        } else {
+          setErrors({ login: 'Invalid email or password' });
+        }
+      } catch (error) {
+        console.error("There was an error fetching data:", error);
+        setErrors({ fetch: 'Error fetching data from server' });
       }
     }
-  const n=useNavigate();
-  const handle12=()=>{
-    n('/');
-  }
+  };
+
+  const handleCreateAccount = () => {
+    nav('/sign');
+  };
 
   return (
     <div>
-    <div className='css1'>
-
-      <h1>Login</h1>
-
-      <form onSubmit={handleDonate}className='css2'>
-          {/* <TextField  type='name' id="outlined-basic" label="Username" variant="outlined" style={{width:'300px'}} onChange={(e)=>{setUsername(e.target.value)}}/> */}
-          
-          <TextField  id="outlined-basic" label="Email" variant="outlined" style={{width:'300px'}} onChange={(e)=>{setEmail(e.target.value)}}/>
-          <div  style={{color:'red'}}>{errors.email}</div>
-          <TextField  type="password"  id="outlined-basic" label="Password" variant="outlined" style={{width:'300px'}} onChange={(e)=>{setPassword(e.target.value)}}/>
-          <div  style={{color:'red'}}>{errors.password}</div>
-          <Button variant="contained" onClick={handle}>Login</Button>
-          {/* <br></br> */}
-          <Button onClick={handle12}>Create a new account</Button>
-      </form>
-        
+      <BefNavbar />
+      <div className='css1'>
+        <h1 style={{paddingLeft:'120px'}}>Login</h1>
+        <br />
+        <Button onClick={handleCreateAccount}>Create a new account</Button>
+        <form onSubmit={handleLogin} className='css2'>
+          <TextField
+            id="outlined-basic"
+            label="Email"
+            variant="outlined"
+            style={{ width: '300px' }}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <div style={{ color: 'red' }}>{errors.email}</div>
+          <TextField
+            type="password"
+            id="outlined-basic"
+            label="Password"
+            variant="outlined"
+            style={{ width: '300px' }}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div style={{ color: 'red' }}>{errors.password}</div>
+          <Button variant="contained" type="submit">Login</Button>
+          <div style={{ color: 'red' }}>{errors.login}</div>
+          <div style={{ color: 'red' }}>{errors.fetch}</div>
+          <h3>Are you an Admin? <Link to='/adlogin'>login here</Link></h3>
+          <br />
+        </form>
       </div>
     </div>
-   
-    // </div>
-         
-  )
+  );
 }
 
-export default Login
- 
+export default Login;

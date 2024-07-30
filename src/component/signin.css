@@ -1,36 +1,45 @@
-*{
-    padding: 0;
-    margin: 0;
-    /* box-sizing: border-box; */
-}
-.css112
+.sub
 {
     
     display: flex;
     flex-direction: column;
-    /* background-color: green; */
-    margin: 10rem auto;
-    max-width: max-content;
+    /* padding-left: 100px; */
+    max-width: 22rem;
     box-shadow: 10px 10px 5px grey;
-    /* box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5); */
-    /* align-items: flex-end; */
+    background-color:rgb(206, 197, 197);
+    border-radius: 25px; /* Adjust the value for more or less curve */
+    padding: 20px;       /* Adjust the padding as needed */
+    border: 3px solid #ccc; /* Optional: Add a border to make the curved edges visible */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    
 }
-.css21
+.charu
 {
-    justify-content:center; 
-    /* align-items:center; */
+    justify-content:center;
+    align-items:center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 10px;
     display:flex;
-    /* padding: 20px;
-    padding-bottom: 30px; */
-    /* padding-right: 200px; */
+    padding: 20px;
+    border-radius: 25px;
+    padding: 20px;       /* Adjust the padding as needed */
+    /* border: 3px solid #ccc; */
+    /* padding-bottom: 30px; */
+   
 }
 .back
 {
     align-items: flex-end;
     /* padding-right: 500px; */
-    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ94_--bGewuUp0-s65eNj9wRZX7dUhs5TZZg&s"); */
-    /* background-repeat: no-repeat; */
-   
+    width:auto;
+    height: 800px;
+    background-size: cover;
+    /* background-image: url("https://png.pngtree.com/background/20240507/original/pngtree-vibrant-balloon-decorations-in-party-room-perfect-for-birthday-celebrations-or-picture-image_8835128.jpg"); */
+    background-image: url("https://static.vecteezy.com/system/resources/previews/031/350/620/large_2x/festive-birthday-party-decorations-on-table-with-cake-present-boxes-and-balloons-on-pastel-color-concept-by-ai-generated-free-photo.jpg");
+
+    background-repeat: no-repeat;
+   padding-left: 100px;
+   padding-top: 50px;
+
 }
+

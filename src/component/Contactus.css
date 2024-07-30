@@ -1,0 +1,39 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+.com1
+{
+    display: flex;
+    width:auto;
+    height: 60px;
+    background-color:rgb(222, 249, 221);
+    padding-top: 15px;  
+     
+}
+.com2{
+    padding-right: 10px;
+    /* text-decoration: ; */
+}
+.com6{
+    padding-right: 18px;
+    /* text-decoration: ; */
+}
+.com3{
+    padding-right: 220px;
+    display: flex;
+}
+.com5{
+    padding-right: 200px;
+    display: flex;
+}
+.com7
+{
+    background-color: rgb(120, 166, 120);
+    height:200px;
+    justify-content:space-around;
+    padding-top: 100px;
+    display: flex;
+    
+}
