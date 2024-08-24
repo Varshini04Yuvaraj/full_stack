@@ -1,26 +1,38 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { BookingProvider } from './component/BookingContext';
-import MyBooking from './component/MyBooking';
 
-import Navbar from './component/Navbar';
-import Footer from './component/Footer';
-import Allevent from './component/Allevent';
+import './App.css';
 import Routing from './component/Routing';
-import MyPayment from './component/MyPayment';
-import AdAllevent from './component/AdAllevent';
-import AdBookings from './component/AdBookings';
-import { AuthProvider } from './component/AuthContext';
 
-const App = () => (
-  <AuthProvider>
-  <BookingProvider>
-    <Routing/>
-    {/* <AdAllevent/> */}
-   
-  </BookingProvider>
-  </AuthProvider>
-);
+function App() {
+  return (
+    <div className="App">
+      <Routing />
+    </div>
+  );
+}
 
 export default App;
+
+// import './App.css';
+
+// import EventList from './component/EventList';
+// import FoodList from './component/FoodList';
+
+// import Routing from './component/Routing';
+// import VenueList from './component/VenueList';
+
+
+// function App() {
+//   return (
+    
+//     <div className="App">
+//     <Routing/>
+   
+//     </div>
+   
+    
+   
+//   );
+// }
+
+// export default App;
+

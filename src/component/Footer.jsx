@@ -1,39 +1,65 @@
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
   return (
-   <>
-
-<footer className="footer">
-      <div className="footer-content">
-        <div className="footer-section about">
-          <h3>About Us</h3>
-          <p>
-            We are a party event management company dedicated to making your special occasions memorable. Our team of experienced planners ensures that every detail is taken care of.
-          </p>
+    <footer style={styles.footer}>
+      <div style={styles.footerContent}>
+        <div style={styles.contactDetails}>
+          <p>Contact Us:</p>
+          <p>Email: <a href="mailto:contact@sparkly.com" style={styles.link}>contact@sparkly.com</a></p>
+          {/* <p>Phone: <a href="tel:+1234567890" style={styles.link}>+1 234 567 890</a></p> */}
+          {/* <p>Location: 123 Sparkly St, Glitter City</p> */}
         </div>
-        <div className="footer-section links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div className="footer-section contact">
-          <h3>Contact Us</h3>
-          <p>Email: contact@partyevents.com</p>
-          <p>Phone: +123 456 7890</p>
-          <p>Address: 123 Party Street, Fun City, FC 12345</p>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Party Event Management | All Rights Reserved</p>
+        {/* <p>&copy; 2024 Sparkly. All rights reserved.</p> */}
       </div>
     </footer>
-   </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
+
+const styles = {
+  footer: {
+    padding: '20px',
+    backgroundColor: '#999999',
+    color: '#fff',
+    textAlign: 'center',
+  },
+  footerContent: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingLeft: '500px', // Added padding to the left
+    paddingRight: '60px', // Added padding to the right
+  },
+  contactDetails: {
+    marginBottom: '0',
+  },
+  link: {
+    color: '#fff',
+    textDecoration: 'none',
+  }
+};
+
+// import React from 'react';
+
+// const Footer = () => {
+//   return (
+//     <footer style={styles.footer}>
+//       <p>&copy; 2024 Sparkly. All rights reserved.</p>
+//     </footer>
+//   );
+// }
+
+// export default Footer;
+
+// const styles = {
+//   footer: {
+//     padding: '20px',
+//     backgroundColor: '#999999',
+//     color: '#fff',
+    
+//     textAlign: 'center',
+//   },
+// };

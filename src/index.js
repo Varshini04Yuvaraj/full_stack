@@ -1,15 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-
+import ReactDOM from 'react-dom/client';
+import './index.css';
 import App from './App';
-import Store from './component/Store';
+import { UserProvider } from './component/UserContext';
+// import { UserProvider } from './UserContext'; // Import the UserProvider
 
-ReactDOM.render(
-    <Provider store={Store}>
-        <App />
-    </Provider>,
-    document.getElementById('root')
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <UserProvider>
+      <App />
+    </UserProvider>
+  </React.StrictMode>
 );
 
 // import React from 'react';

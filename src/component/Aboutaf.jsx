@@ -1,11 +1,12 @@
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import Headeraf from './Headeraf';
 
-const About = () => {
+const Aboutaf = () => {
   return (
     <>
-    <Header/>
+    <Headeraf/>
     <div style={styles.container}>
       <div style={styles.imageContainer}>
         <img
@@ -32,7 +33,7 @@ At Dreamy Occasions, we believe in making every celebration extraordinary. Let u
   );
 };
 
-export default About;
+export default Aboutaf;
 
 const styles = {
   container: {
